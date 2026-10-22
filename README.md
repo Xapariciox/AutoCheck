@@ -342,7 +342,7 @@ git push -u origin feature/T-xx-descripcion     # tras un rebase: --force-with-l
 
 ### Pull requests
 
-- Título con el código de la tarjeta: `[T-08] Registro y login con JWT` 
+- Título con el código de la tarjeta: `[T-08] Registro y login con JWT. ` 
 - Enlace a la tarjeta de Trello, descripción de los cambios y cómo probarlos
 - Tests añadidos o actualizados
 - CI en verde y aprobación del dueño de la carpeta (`CODEOWNERS`)
