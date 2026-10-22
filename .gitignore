@@ -147,3 +147,69 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+
+# =============================================================
+# BACKEND · Java 21 + Spring Boot + Maven
+# =============================================================
+/backend/target/
+/backend/build/
+# Se versiona el Maven Wrapper (mvnw + .mvn/wrapper) para que todos usen la misma versión
+!/backend/.mvn/wrapper/maven-wrapper.jar
+/backend/HELP.md
+/backend/*.hprof
+# Configuración local que sobrescribe application.yml (no se comparte)
+/backend/src/main/resources/application-local.yml
+/backend/src/main/resources/application-local.properties
+ 
+# =============================================================
+# MOBILE · Expo + React Native + TypeScript
+# =============================================================
+/mobile/node_modules/
+/mobile/.expo/
+/mobile/dist/
+/mobile/web-build/
+/mobile/expo-env.d.ts
+/mobile/*.tsbuildinfo
+ 
+# Carpetas nativas generadas por "npx expo prebuild" (Continuous Native Generation).
+# Si algún día las editáis a mano, quitad estas dos líneas y versionadlas.
+/mobile/ios/
+/mobile/android/
+ 
+# Metro y builds
+/mobile/.metro-health-check*
+/mobile/*.jsbundle
+/mobile/*.apk
+/mobile/*.aab
+/mobile/*.ipa
+ 
+# Tests y cobertura (Jest)
+/mobile/coverage/
+ 
+# Maestro E2E
+/mobile/.maestro/screenshots/
+/mobile/.maestro/recordings/
+# (los flujos .yaml de .maestro/ SÍ se versionan)
+ 
+# =============================================================
+# HERRAMIENTAS DE LA RAÍZ · husky, commitlint, lint-staged
+# =============================================================
+/node_modules/
+.husky/_/
+.eslintcache
+.prettiercache
+ 
+# =============================================================
+# DOCKER
+# =============================================================
+# Datos persistidos si se usa un bind mount local en vez de un volumen con nombre
+/docker/data/
+/pgdata/
+docker-compose.override.yml
+ 
+# ---------- Temporales varios ----------
+tmp/
+temp/
+*.tmp
+*.bak
