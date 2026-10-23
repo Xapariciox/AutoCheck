@@ -16,7 +16,8 @@
     "typescript": "~6.0.3"
   },
   "overrides": {
-    "node-forge": "npm:is-number@^7.0.0"
+    "node-forge": "npm:@vilic/node-forge@^1.3.2-5",
+    "zod": "^4.6.6"
   },
   "scripts": {
     "start": "expo start",
