@@ -1,3 +1,16 @@
+// ==============================================================================
+// PANTALLA PRINCIPAL DE PRUEBAS VISUALES (App.tsx)
+// ==============================================================================
+//
+// ¿QUE HAGO EN ESTE ARCHIVO?
+// Aqui monte un banco de pruebas visual donde renderizo mis componentes base
+// y los tokens de diseno para comprobar su comportamiento en directo:
+// 1. Cabecera con la tipografia y colores de AutoCheck.
+// 2. Tarjetas con las franjas de colores del semaforo de salud vehicular (verde, amarillo, rojo).
+// 3. Formulario con inputs interactivos (email, contrasena con toggle) y botones con estados de carga.
+//
+// ==============================================================================
+
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, View, Alert } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
@@ -13,7 +26,7 @@ export default function App() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      Alert.alert('¡AutoCheck Conectado!', `Bienvenido ${email || 'Conductor'}`);
+      Alert.alert('AutoCheck Conectado', `Bienvenido ${email || 'Conductor'}`);
     }, 1500);
   };
 
@@ -25,42 +38,42 @@ export default function App() {
         {/* Cabecera de Marca */}
         <View style={styles.header}>
           <Text variant="display" color={theme.colors.primaryDark}>
-            AutoCheck 🚗
+            AutoCheck
           </Text>
           <Text variant="caption">
-            Tu asistente de salud vehicular · Modo Diseño Activo
+            Tu asistente de salud vehicular - Modo Diseno Activo
           </Text>
         </View>
 
-        {/* 🚦 SECCIÓN: El Semáforo en Acción */}
+        {/* SECCION: El Semaforo en Accion */}
         <Text variant="h3" style={styles.sectionTitle}>
-          Estado del Semáforo (Tokens)
+          Estado del Semaforo (Tokens)
         </Text>
 
         <View style={styles.cardsContainer}>
           <Card status="green" style={styles.cardItem}>
             <Text variant="h3">Aceite de Motor</Text>
             <Text variant="body" color={theme.colors.trafficLight.green.text}>
-              ● Al día · Próximo cambio en 8.500 km
+              Al dia - Proximo cambio en 8.500 km
             </Text>
           </Card>
 
           <Card status="yellow" style={styles.cardItem}>
             <Text variant="h3">Filtro de Aire</Text>
             <Text variant="body" color={theme.colors.trafficLight.yellow.text}>
-              ▲ Atención · Faltan 1.200 km (25 días)
+              Atencion - Faltan 1.200 km (25 dias)
             </Text>
           </Card>
 
           <Card status="red" style={styles.cardItem}>
-            <Text variant="h3">Inspección ITV</Text>
+            <Text variant="h3">Inspeccion ITV</Text>
             <Text variant="body" color={theme.colors.trafficLight.red.text}>
-              ■ Crítico · Plazo vencido hace 4 días
+              Critico - Plazo vencido hace 4 dias
             </Text>
           </Card>
         </View>
 
-        {/* 🔐 SECCIÓN: Formulario Interactivo para el Login */}
+        {/* SECCION: Formulario Interactivo para el Login */}
         <Text variant="h3" style={styles.sectionTitle}>
           Formulario Base (Inputs)
         </Text>
@@ -94,7 +107,7 @@ export default function App() {
           <Button
             title="Registrar nuevo coche"
             variant="outline"
-            onPress={() => Alert.alert('Garaje', 'Abriendo alta de vehículo...')}
+            onPress={() => Alert.alert('Garaje', 'Abriendo alta de vehiculo...')}
             style={styles.actionButton}
           />
         </Card>
