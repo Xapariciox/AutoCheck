@@ -9,23 +9,48 @@
     "react-native": "0.88.0"
   },
   "devDependencies": {
+    "@expo/ngrok": "^4.1.3",
+    "@swc/core": "^1.16.20",
+    "@swc/jest": "^0.2.39",
+    "@testing-library/react-native": "^14.1.0",
+    "@types/jest": "^30.0.0",
     "@types/react": "~19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-expo": "~58.0.4",
+    "jest": "^30.5.2",
+    "jest-expo": "^58.0.12",
+    "msw": "^3.0.3",
     "prettier": "^3.9.10",
     "typescript": "~6.0.3"
   },
   "overrides": {
     "node-forge": "npm:@vilic/node-forge@^1.3.2-5",
+    "uuid": "^11.1.1",
     "zod": "^4.6.6"
   },
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --lan",
+    "start:tunnel": "expo start --tunnel",
+    "start:clear": "expo start -c",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "scripts_doc": {
+    "npm start": "Inicia Metro en red local (LAN) para conectar Expo Go sin depender de servicios externos",
+    "npm run start:tunnel": "Inicia Metro mediante tunel ngrok para conexiones fuera de la red local (requiere token)",
+    "npm run start:clear": "Inicia Metro purgando la cache previa para resolver bloqueos o pantallas en blanco",
+    "npm run android": "Abre la aplicacion en un emulador Android o dispositivo fisico",
+    "npm run ios": "Abre la aplicacion en el simulador iOS (requiere macOS)",
+    "npm run web": "Ejecuta la aplicacion en el navegador web local",
+    "npm run lint": "Audita el codigo con ESLint para asegurar calidad y convenciones",
+    "npm run typecheck": "Valida el tipado con el compilador de TypeScript sin generar archivos",
+    "npm run test": "Ejecuta la suite completa de pruebas unitarias con Jest y MSW",
+    "npm run test:watch": "Ejecuta Jest en modo interactivo que reacciona a cambios en tiempo real"
   },
   "private": true
 }
