@@ -112,7 +112,7 @@ El **estado global** es el peor de todos. La **media diaria** es una media ponde
 
 ## Stack tecnológico
 
-**Mobile:** React Native con Expo y TypeScript · React Navigation · TanStack Query + Axios · Zustand · React Hook Form + Zod · Expo SecureStore · Expo Notifications · expo-auth-session / expo-apple-authentication
+**Mobile:** React Native con Expo y TypeScript · Expo Router · TanStack Query + Axios · Zustand · React Hook Form + Zod · Expo SecureStore · Expo Notifications · expo-auth-session / expo-apple-authentication
 
 **Backend:** Java 21 · Spring Boot 3 (Web, Security, Data JPA, Validation, Actuator) · JWT (access + refresh) · MapStruct + Lombok · springdoc-openapi (Swagger UI) · OpenPDF + ZXing (PDF y QR) · tareas `@Scheduled`
 
