@@ -1,0 +1,19 @@
+# Perfil de producción. Activar con: SPRING_PROFILES_ACTIVE=prod
+# La conexión se hereda de application.yml SIN valores por defecto:
+# si falta DB_URL, DB_USER o DB_PASSWORD la aplicación no arranca.
+spring:
+  jpa:
+    show-sql: false
+
+  flyway:
+    clean-disabled: true      # nunca permitir borrar la BD en producción
+
+server:
+  error:
+    include-stacktrace: never
+    include-message: never
+
+logging:
+  level:
+    root: INFO
+    com.autocheck: INFO
