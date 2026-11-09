@@ -4,6 +4,11 @@ spring:
   application:
     name: autocheck
 
+  # Si no se indica perfil (./mvnw spring-boot:run a secas) se usa dev.
+  # Docker, CI y producción lo fijan con SPRING_PROFILES_ACTIVE.
+  profiles:
+    default: dev
+
   datasource:
     url: ${DB_URL}
     username: ${DB_USER}
