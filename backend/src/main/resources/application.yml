@@ -1,0 +1,29 @@
+# Configuración base: se carga siempre, con o sin perfil activo.
+# La conexión a la BD se lee de variables de entorno (ver .env.example en la raíz).
+spring:
+  application:
+    name: autocheck
+
+  # Si no se indica perfil (./mvnw spring-boot:run a secas) se usa dev.
+  # Docker, CI y producción lo fijan con SPRING_PROFILES_ACTIVE.
+  profiles:
+    default: dev
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate      # Flyway crea el esquema; Hibernate solo lo valida
+    open-in-view: false
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1

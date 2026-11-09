@@ -213,3 +213,8 @@ tmp/
 temp/
 *.tmp
 *.bak
+
+# Sistema / IDE
+.DS_Store
+.idea/
+*.iml

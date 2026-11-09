@@ -1,0 +1,10 @@
+# Perfil de tests. La BD la levanta Testcontainers (ver TestcontainersConfiguration),
+# que sobrescribe la conexión del datasource: no hace falta tener PostgreSQL arrancado.
+spring:
+  flyway:
+    clean-disabled: false     # permite vaciar la BD entre ejecuciones de tests
+
+logging:
+  level:
+    root: WARN
+    com.autocheck: INFO

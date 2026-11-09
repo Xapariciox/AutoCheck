@@ -114,7 +114,7 @@ El **estado global** es el peor de todos. La **media diaria** es una media ponde
 
 **Mobile:** React Native con Expo y TypeScript · Expo Router · TanStack Query + Axios · Zustand · React Hook Form + Zod · Expo SecureStore · Expo Notifications · expo-auth-session / expo-apple-authentication
 
-**Backend:** Java 21 · Spring Boot 3 (Web, Security, Data JPA, Validation, Actuator) · JWT (access + refresh) · MapStruct + Lombok · springdoc-openapi (Swagger UI) · OpenPDF + ZXing (PDF y QR) · tareas `@Scheduled`
+**Backend:** Java 21 · Spring Boot 4 (Web, Security, Data JPA, Validation, Actuator) · JWT (access + refresh) · MapStruct + Lombok · springdoc-openapi (Swagger UI) · OpenPDF + ZXing (PDF y QR) · tareas `@Scheduled`
 
 **Base de datos:** PostgreSQL 16 · Flyway · trigger de inmutabilidad para el pasaporte
 
@@ -133,7 +133,7 @@ flowchart LR
     end
 
     subgraph Compose["Docker Compose"]
-        API["Backend Spring Boot 3<br/>/api/v1 + Swagger"]
+        API["Backend Spring Boot 4<br/>/api/v1 + Swagger"]
         DB[(PostgreSQL 16<br/>Flyway)]
         PGA[pgAdmin]
         MAIL[Mailpit]
@@ -390,7 +390,7 @@ Columnas: `Sprint N` → `En curso` → `En revisión (PR abierta)` → `Hecho`.
 | Código | Requisito |
 | --- | --- |
 | RNF-01 | Multiplataforma y offline-first: React Native, TypeScript, Expo, caché con TanStack Query y SecureStore |
-| RNF-02 | Persistencia ligera: Java 21 + Spring Boot 3 + PostgreSQL 16, con datos mínimos en el servidor |
+| RNF-02 | Persistencia ligera: Java 21 + Spring Boot 4 + PostgreSQL 16, con datos mínimos en el servidor |
 | RNF-03 | Inmutabilidad: triggers que impiden modificar o borrar el historial del pasaporte |
 | RNF-04 | Tareas programadas en el backend para el control de ITV y seguros |
 | RNF-05 | Monorepo con Git, Flyway, Docker / Docker Compose y cobertura de tests estricta en backend y frontend |
